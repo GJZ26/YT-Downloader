@@ -9,7 +9,7 @@
 source tmp.sh 
 
 clear
-echo -e ".-.-.-.-.-.-. YT Downloader 1.0.0 .-.-.-.-.-.-.\n"
+echo -e ".-.-.-.-.-.-. YT Downloader 1.0.1 .-.-.-.-.-.-.\n"
 
 # Corremos el programas script que decarga los archivos mp4
 /usr/bin/python3 ./dowloader.py
@@ -27,3 +27,5 @@ rmTmp
 
 echo -e "\nCerrando programa..."
 read -t 10 -p "Presione enter para hacerlo de inmediato"
+#clear
+echo "Programa finalizado"

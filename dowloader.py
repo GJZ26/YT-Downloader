@@ -10,11 +10,16 @@ print("Ingrese la ruta de guardado: ",end="")
 rutaSave=input()
 rutaSave+="/"
 
+#Creamos carpeta temporal de descarga
+os.mkdir(rutaSave+'.mp4')
+rutaSavetmp=rutaSave+".mp4/"
+
 # Guardamos las rutas de la playlist y la carpeta para guardar en un txt para usarlo con otros códigos
 print("[Guardando rutas]")
 file=open("./.path.txt","w")
 file.write(rutaSave+"\n")
 file.write(rutaList+"\n")
+file.write(rutaSavetmp)
 file.close()
 
 # Almacenamos los nombres de los links de la playlist en un arreglo
@@ -28,5 +33,5 @@ print("[Inicializando descarga]")
 for line in lines:
     song=pyt.YouTube(line)
     print("\nDecargando:<",line,">\n\tTítulo:",song.title,"\n\tAutor:",song.author,"\n\tDuración:",song.length,"segundos")
-    song.streams.get_lowest_resolution().download(rutaSave)
+    song.streams.get_lowest_resolution().download(rutaSavetmp)
     print("\t\t\t¡Listo!")
